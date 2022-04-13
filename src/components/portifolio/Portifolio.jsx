@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Portifolio.css";
-import IMG1 from "../../assets/user-img.png";
+import IMG1 from "../../assets/portifolio-01.png";
 import IMG2 from "../../assets/user-img.png";
 import IMG3 from "../../assets/user-img.png";
 import IMG4 from "../../assets/user-img.png";
@@ -19,7 +19,7 @@ const data = [
   {
     id: 2,
     image: IMG2,
-    title: 'Gericht Restaurant - Home page, Menu and more',
+    title: 'Gericht Restaurant - Homepage, Menu and more',
     github: "https://github.com/GoulartAugusto/",
     demo: "https://github.com/GoulartAugusto"
   },{
@@ -57,75 +57,29 @@ const Portifolio = () => {
       <h2>Portifolio</h2>
 
       <div className="container portifolio__container">
-      <article className="portifolio__item">
-        <div className="portifolio__item-image">
-          <img src={IMG1} alt="" />
-        </div>
-        <h3>This is a portifolio title</h3>
-        <div className="portifolio__item-cta">
-          <a href="htpps://github.com/GoulartAugusto" className="btn" target="_blank">Github</a>
-          <a href="htpps://github.com/GoulartAugusto" className="btn btn-primary" target="_blank">Live Demo</a>
-        </div>
-      </article>
-      
-      <article className="portifolio__item">
-        <div className="portifolio__item-image">
-          <img src={IMG1} alt="" />
-        </div>
-        <h3>This is a portifolio title</h3>
-        <div className="portifolio__item-cta">
-          <a href="htpps://github.com/GoulartAugusto" className="btn" target="_blank">Github</a>
-          <a href="htpps://github.com/GoulartAugusto" className="btn btn-primary" target="_blank">Live Demo</a>
-        </div>
-      </article>
-      
-      <article className="portifolio__item">
-        <div className="portifolio__item-image">
-          <img src={IMG1} alt="" />
-        </div>
-        <h3>This is a portifolio title</h3>
-        <div className="portifolio__item-cta">
-          <a href="htpps://github.com/GoulartAugusto" className="btn" target="_blank">Github</a>
-          <a href="htpps://github.com/GoulartAugusto" className="btn btn-primary" target="_blank">Live Demo</a>
-        </div>
-      </article>
-      
-      <article className="portifolio__item">
-        <div className="portifolio__item-image">
-          <img src={IMG1} alt="" />
-        </div>
-        <h3>This is a portifolio title</h3>
-        <div className="portifolio__item-cta">
-          <a href="htpps://github.com/GoulartAugusto" className="btn" target="_blank">Github</a>
-          <a href="htpps://github.com/GoulartAugusto" className="btn btn-primary" target="_blank">Live Demo</a>
-        </div>
-      </article>
-      
-      <article className="portifolio__item">
-        <div className="portifolio__item-image">
-          <img src={IMG1} alt="" />
-        </div>
-        <h3>This is a portifolio title</h3>
-        <div className="portifolio__item-cta">
-          <a href="htpps://github.com/GoulartAugusto" className="btn" target="_blank">Github</a>
-          <a href="htpps://github.com/GoulartAugusto" className="btn btn-primary" target="_blank">Live Demo</a>
-        </div>
-      </article>
-      
-      <article className="portifolio__item">
-        <div className="portifolio__item-image">
-          <img src={IMG1} alt="" />
-        </div>
-        <h3>This is a portifolio title</h3>
-        <div className="portifolio__item-cta">
-          <a href="htpps://github.com/GoulartAugusto" className="btn" target="_blank">Github</a>
-          <a href="htpps://github.com/GoulartAugusto" className="btn btn-primary" target="_blank">Live Demo</a>
-        </div>
-      </article>
-      
+      {
+        data.map(({id, image, title, github, demo}) => {
+          return (
+
+            <article key={id} className="portifolio__item">
+              <div className="portifolio__item-image">
+                <img src={image} alt={title} />
+              </div>
+              <h3>{title}</h3>
+              <div className="portifolio__item-cta">
+                <a href={github} className="btn" target="_blank">Github</a>
+                <a href={demo} className="btn btn-primary" target="_blank">Live Demo</a>
+              </div>
+            </article>
+
+          )
+        })
+      }
       </div>
     </section>
   )
 }
 
 export default Portifolio
+
+// ===== Video goes back in 2:15:00
